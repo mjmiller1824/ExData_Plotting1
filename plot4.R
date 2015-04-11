@@ -22,7 +22,7 @@ plot4<-function(){
   plot(toplot$datetime,toplot$Global_active_power,type="n",xlab="",ylab="Global Active Power")#plots line graph of global active power vs time.
   lines(toplot$datetime,toplot$Global_active_power,type="l")
   
-  plot(toplot$datetime,toplot$Voltage,type="n",ylab="Voltage",xlab="datetime")#plots second graph at top
+  plot(toplot$datetime,toplot$Voltage,type="n",ylab="Voltage",xlab="datetime")#plots second graph at top comparing voltage and datetime
   lines(toplot$datetime,toplot$Voltage,type="l")
   
     
