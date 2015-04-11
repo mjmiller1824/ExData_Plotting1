@@ -16,10 +16,10 @@ plot4<-function(){
                         Sub_metering_2=energydata[,8],
                         Sub_metering_3=energydata[,9])                 
   toplot<-subenergy[ (subenergy$datetime>=date1)&(subenergy$datetime<=date2),]#subsets for boundary dates
-  par(mfrow=c(2,2),cex.lab=.5,cex.axis=.75)#Tells R to present all plots on a single page
+  par(mfrow=c(2,2),cex.lab=.5,cex.axis=.75)#Tells R to present all plots on a single page and changes the cex setting to make labels appear as they do in example.
   par(mar=c(4,5,3,3))
   
-  plot(toplot$datetime,toplot$Global_active_power,type="n",xlab="",ylab="Global Active Power")#plots line graph of 
+  plot(toplot$datetime,toplot$Global_active_power,type="n",xlab="",ylab="Global Active Power")#plots line graph of global active power vs time.
   lines(toplot$datetime,toplot$Global_active_power,type="l")
   
   plot(toplot$datetime,toplot$Voltage,type="n",ylab="Voltage",xlab="datetime")#plots second graph at top
@@ -30,7 +30,7 @@ plot4<-function(){
   lines(toplot$datetime,toplot$Sub_metering_1,type="l",col="black")
   lines(toplot$datetime,toplot$Sub_metering_2,type="l",col="red")
   lines(toplot$datetime,toplot$Sub_metering_3,type="l",col="blue")
-  legend("topright",lty=1,cex=.2,col=c("black","red","blue"),bty="n",legend=c("Sub_metering_1",
+  legend("topright",lty=1,cex=.2,col=c("black","red","blue"),bty="n",legend=c("Sub_metering_1", #Cex is used because the legend and labels would not draw at the correct size.
                                                                       "Sub_metering_2",
                                                                       "Sub_metering_3"))
   
@@ -39,7 +39,7 @@ plot4<-function(){
   lines(toplot$datetime,toplot$Global_reactive_power,type="l")
   
  
-  dev.copy(png, filename='plot4.png', width= 480, height=480, units="px",bg="transparent")#writes to .png file
+  dev.copy(png, filename='plot4.png', width= 480, height=480, units="px",bg="transparent")#writes to .png file. 
   dev.off()#closes .png file
   
   
